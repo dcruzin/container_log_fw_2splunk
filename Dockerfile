@@ -8,7 +8,6 @@ USER root
 RUN buildDeps="sudo make gcc g++ libc-dev" \
  && apt-get update \
  && apt-get install -y --no-install-recommends $buildDeps \
- #&& sudo gem install fluent-plugin-elasticsearch \
  && sudo gem sources --clear-all \
  && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
@@ -17,9 +16,9 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
-COPY plugins/* /fluentd/etc/plugins/
+# this is the default collection where the fluentd entrypoint will load plugins
+COPY plugins/* /fluentd/plugins/
 
 COPY fluent.conf /fluentd/etc/
-COPY entrypoint.sh /bin/
 
 USER fluent
