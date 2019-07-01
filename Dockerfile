@@ -16,6 +16,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && sudo gem install -N fluent-plugin-prometheus -v "1.3.0" \
  # required to parse multi_json
  && sudo gem install fluent-plugin-jq \
+ && sudo gem install fluent-plugin-splunk-hec \
  && sudo gem install bundler \
  && sudo bundle \
  && sudo gem sources --clear-all \
