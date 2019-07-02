@@ -13,8 +13,8 @@ module Fluent::Plugin
 
     helpers :formatter
 
-    autoload :VERSION, "fluent/plugins/out_splunk_hec/version"
-    autoload :MatchFormatter, "fluent/plugins/out_splunk_hec/match_formatter"
+    autoload :VERSION, "fluent/plugin/out_splunk_hec/version"
+    autoload :MatchFormatter, "fluent/plugin/out_splunk_hec/match_formatter"
 
     KEY_FIELDS = %w[index time host source sourcetype metric_name metric_value].freeze
     TAG_PLACEHOLDER = '${tag}'.freeze
