@@ -27,7 +27,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev" \
  && rm -rf /var/lib/apt/lists/* \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
 
-COPY plugins/* /fluend/plugin/
+COPY plugins/* /fluentd/plugins/
 
 COPY fluent.conf /fluentd/etc/
 
